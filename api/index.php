@@ -1,6 +1,9 @@
 <?php
 
-// Buat struktur folder sementara di /tmp yang diizinkan ditulis oleh Vercel
+// Paksa SCRIPT_NAME ke /index.php agar prefix /api/ pada URL tidak terpotong oleh Symfony/Laravel Request
+$_SERVER['SCRIPT_NAME'] = '/index.php';
+$_SERVER['PHP_SELF'] = '/index.php';
+
 $dirs = [
     '/tmp/views',
     '/tmp/cache/data',
@@ -14,7 +17,6 @@ foreach ($dirs as $dir) {
     }
 }
 
-// Alihkan path storage Laravel ke /tmp
 $_ENV['APP_STORAGE'] = '/tmp';
 putenv('APP_STORAGE=/tmp');
 
