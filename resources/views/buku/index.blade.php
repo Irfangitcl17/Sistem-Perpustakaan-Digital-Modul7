@@ -79,7 +79,7 @@
                                     <td class="p-3 font-medium">{{ $buku->judul }}</td>
             
                                     <td class="p-3">{{ $buku->penulis }}</td>
-                                    <td class="p-3"><span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Kategori</span></td>
+                                    <td class="p-3"><span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">{{ $buku->kategori->nama ?? 'Tanpa Kategori' }}</span></td>
                                     <td class="p-3">{{ $buku->tahun_terbit }}</td>
                                     <td class="p-3 text-center">
                                         <a href="/buku/{{ $buku->id }}" class="inline-block bg-indigo-500 text-white px-3 py-1 rounded text-sm hover:bg-indigo-600 mb-1 mr-1">Detail</a>
